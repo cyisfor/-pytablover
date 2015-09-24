@@ -1,0 +1,5 @@
+PEP-8 says we should use 4 spaces to indent, so that’s what most people are going to do. I hate using multiple characters for a single indentation though, because you have to do division in your head in order to count what level of indentation you are, while keying through all the spaces one-by-one to count them, since they aren’t visible. Plus sometimes when code starts getting deep, I want to reduce the tab width to 2, to better see the structure of it.
+
+The trouble is when I want to collaborate, I’m going to edit someone’s file who used 4 spaces, and my editor will happily blindly insert tabs, thus invisibly rendering my code invalid. So instead of configuring the editor to scan for tabs or spaces, and somehow display 4 spaces as 2 when I want, I’ll just use a git attribute filter!
+
+install.py should be fairly self explanatory. It adds the contents of config and attributes to your git config and attributes files, respectively. *.py gets the tab filter, and it uses the “expand” utility (available in coreutils) to transparently substitute spaces for tabs on checkout, and tabs for spaces on check-in.

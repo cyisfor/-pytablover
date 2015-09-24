@@ -42,5 +42,3 @@ upgrade(config,"config")
 upgrade(attributes,"attributes")
 
 print("OK you're set.")
-
-
